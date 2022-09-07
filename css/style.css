@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --roboto-slab: "Roboto Slab", serif;
+  --outfit: "Outfit", sans-serif;
+  --josefin-sans: "Josefin Sans", serif;
+
+  --vermelho: #FF141D;
+  --vermelho-pastel: #DE3338;
+  --black: #000;
+  --light-color: #F0F0F0;
+  --white: #FFF;
+}
+
+body {
+  background-image: url('../img/ilustracao-rio.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, .2);
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: header .5s ease-in forwards;
+}
+
+.header-content-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header-content-container nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header-content-container nav ul li a {
+  display: inline-block;
+  padding: 10px;
+  color: var(--white);
+  margin: 0 10px;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: var(--outfit);
+  transition: .3s;
+}
+
+.header-content-container nav ul li a:hover {
+  color: var(--black);
+}
+
+.home {
+  background-image: url('../img/bg-home.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 742px;
+}
+
+.home .content-home {
+  background: rgba(0, 0, 0, .5);
+  width: 100%;
+  padding: 70px 50px;
+  border-top: 10px solid var(--black);
+  border-bottom: 10px solid var(--black);
+  opacity: 0;
+  animation: slide .5s ease-in forwards;
+}
+
+.content-home .title-home {
+  font-family: var(--josefin-sans);
+  color: var(--vermelho);
+  font-weight: 400;
+  font-size: 3.75rem;
+  margin-bottom: 24px;
+}
+
+.content-home p {
+  color: var(--white);
+  font-family: var(--josefin-sans);
+  font-weight: 200;
+  font-size: 2.375rem;
+}
+
+.curiosidades-container {
+  border-top: 10px solid var(--vermelho-pastel);
+  background: var(--black);
+  color: var(--light-color);
+  text-align: center;
+  padding: 30px;
+}
+
+.curiosidades-container h2 {
+  font-size: 3.25rem;
+  font-family: var(--josefin-sans);
+  font-weight: 400;
+  margin-top: 45px;
+}
+
+.curiosidades-container p {
+  max-width: 1150px;
+  text-align: left;
+  margin: 35px auto;
+  font-size: 1.75rem;
+  font-family: var(--roboto-slab);
+  line-height: 40px;
+  font-weight: 300;
+}
+
+.cards-container {
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.cards-container .card {
+  margin-bottom: 30px;
+  height: 534px;
+  width: 420px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-image: url('../img/cristo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cards-container .card.restaurante {
+  background-image: url('../img/feiojoada.jpg');
+}
+
+.cards-container .card.historia {
+  background-image: url('../img/historia.jpg');
+}
+
+.cards-container .card::after {
+  content: '';
+  transition: .4s;
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.cards-container .card:hover::after {
+  content: '';
+  backdrop-filter: blur(0);
+}
+
+.cards-container .card h3 {
+  font-family: var(--roboto-slab);
+  font-size: 1.625rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(1px 2px 4px rgba(0,0,0,.3));
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(-30px, 0 ,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0 ,0);
+
+  }
+}
+
+@keyframes header {
+  0% {
+    transform: translate3d(0, -80px ,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0px ,0);
+
+  }
+}
