@@ -125,8 +125,12 @@ html {
   margin: 35px auto;
   font-size: 1.75rem;
   font-family: var(--roboto-slab);
-  line-height: 40px;
-  font-weight: 300;
+  line-height: 45px;
+  font-weight: 200;
+}
+
+.curiosidades-container p span {
+  font-weight: 400;
 }
 
 .cards-container {
@@ -203,5 +207,31 @@ html {
     opacity: 1;
     transform: translate3d(0, 0px ,0);
 
+  }
+}
+
+@media(max-width: 425px) {
+  html {
+    font-size: 10px;
+  }
+  .header-content-container {
+    justify-content: center;
+    gap: 20px;
+  }
+  .content-home h1 {
+    text-align: center;
+  }
+  .content-home p {
+    line-height: 28px;
+    text-align: left;
+  }
+
+  .cards-container {
+    justify-content: center;
+  }
+
+  .curiosidades-container p {
+    line-height: 28px;
+    text-align: left;
   }
 }
